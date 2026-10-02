@@ -1,0 +1,42 @@
+{
+  "_comment": "workspace-tidy 整理配置示例。复制为工作区根目录的 tidy.config.json 后按自己的分类体系修改。所有路径支持相对 --root 的相对路径。keywords 大小写不敏感，匹配文件名与（ZCode 分组的）会话标题及首条消息。",
+
+  "min_age_hours": 72,
+  "archive_dir": "attic_deprecated",
+  "logs_dir": "logs",
+  "protected": ["AGENTS.md", "README.md", "index.html"],
+
+  "categories": [
+    { "dir": "01_research",   "keywords": ["论文", "文献", "实验", "paper", "research", "论文稿"] },
+    { "dir": "02_competition","keywords": ["竞赛", "大赛", "报名", "通知", "competition"] },
+    { "dir": "03_ecommerce",  "keywords": ["商品图", "上架", "listing", "店铺", "shop"] },
+    { "dir": "04_content",    "keywords": ["封面", "卡片", "封面图", "文案", "稿件", "content"] },
+    { "dir": "05_dev",        "keywords": ["脚本", "原型", "demo", "构建", "build"] }
+  ],
+
+  "junk_patterns": ["nul", "*$*.png", "*.tmp", "*.temp", ".DS_Store", "Thumbs.db"],
+
+  "junctions": [
+    { "link": "shared-assets", "target": "05_dev/assets" },
+    { "link": "latest-output", "target": "05_dev/output" }
+  ],
+
+  "zcode": {
+    "tasks_db": "",
+    "cli_db": "",
+    "default_group": "group-ops",
+    "groups": [
+      { "id": "group-research", "title": "科研学术", "color": "purple",
+        "keywords": ["论文", "文献", "实验", "科研", "paper", "research"] },
+      { "id": "group-dev", "title": "项目开发", "color": "blue",
+        "keywords": ["开发", "重构", "脚手架", "api", "bug", "debug", "部署"] },
+      { "id": "group-content", "title": "内容创作", "color": "orange",
+        "keywords": ["笔记", "文案", "封面", "发布", "卡片", "内容"] },
+      { "id": "group-learning", "title": "学习提升", "color": "yellow",
+        "keywords": ["学习", "教程", "入门", "计划", "练习"] },
+      { "id": "group-ops", "title": "系统运维", "color": "green",
+        "keywords": ["诊断", "修复", "安装", "升级", "配置", "清理", "备份"] }
+    ],
+    "overrides": {}
+  }
+}
